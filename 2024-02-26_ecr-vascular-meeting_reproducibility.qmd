@@ -205,10 +205,18 @@ qrcode::generate_svg(code, filename = here::here("images/qrcode.svg"))
 
 ## Thanks for listening {.final-slide background-image="_extensions/H-Mateus/ukdri/title_background.png" style="color: #0ac8ff;"}
 
--   Please don't let the perfect be the enemy of the good! Anything you can do to get closer to more transparent and reproducible research is a huge win as far as I'm concerned
+::: columns
+::: {.column width="60%"}
+-   Please don't let the perfect be the enemy of the good! 
+-   Anything you can do to get closer to more transparent and reproducible research is a huge win as far as I'm concerned
 -   Here's a link to the slides again: [https://h-mateus.github.io/presentations_dri-ecr-vascular_reproducibility_2024-03-14/2024-02-26_ecr-vascular-meeting_reproducibility.html](https://h-mateus.github.io/presentations_dri-ecr-vascular_reproducibility_2024-03-14/2024-02-26_ecr-vascular-meeting_reproducibility.html)
+:::
 
+::: {.column width="40%"}
 ![](images/qrcode.svg)
+:::
+:::
+
 
 <!--Use the following to add further logos to the title/final slide-->
 
