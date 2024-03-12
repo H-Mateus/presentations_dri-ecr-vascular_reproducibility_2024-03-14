@@ -34,6 +34,18 @@ dri_hexcolours <- c("dark_blue" = "#00326e", "light_grey" = "#c4d1d9",
                     "ruby" = "#aa0050", "yellow" = "#ffed00")
 ```
 
+## Follow the slides online
+
+```{r}
+#| include: false
+code <- qrcode::qr_code("https://h-mateus.github.io/presentations_dri-ecr-vascular_reproducibility_2024-03-14/2024-02-26_ecr-vascular-meeting_reproducibility.html")
+qrcode::generate_svg(code, filename = here::here("images/qrcode.svg"))
+```
+
+-   Slides are here: [https://h-mateus.github.io/presentations_dri-ecr-vascular_reproducibility_2024-03-14/2024-02-26_ecr-vascular-meeting_reproducibility.html#/title-slide](https://h-mateus.github.io/presentations_dri-ecr-vascular_reproducibility_2024-03-14/2024-02-26_ecr-vascular-meeting_reproducibility.html#/title-slide)
+
+![](images/qrcode.svg)
+
 ## Most published research is false
 
 ::: incremental
