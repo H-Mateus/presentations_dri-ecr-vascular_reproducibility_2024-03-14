@@ -214,6 +214,9 @@ qrcode::generate_svg(code, filename = here::here("images/qrcode.svg"))
 
 ::: {.column width="40%"}
 ![](images/qrcode.svg)
+
+[![](https://zenodo.org/badge/770919433.svg)](https://zenodo.org/doi/10.5281/zenodo.10809738)
+
 :::
 :::
 
