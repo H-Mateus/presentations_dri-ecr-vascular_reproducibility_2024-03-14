@@ -10,6 +10,7 @@ format:
   ukdri-revealjs:
     smaller: true
     multiplex: true
+embed-resources: true
 bibliography: references.bib
 csl: /Users/mateusbernardo-harrington/Documents/citation_styles/nature.csl
 ---

@@ -51,3 +51,5 @@ rsconnect/
 
 # Ignore the speaker file
 *-speaker.html
+
+.DS_Store
