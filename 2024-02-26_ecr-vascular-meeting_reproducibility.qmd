@@ -10,6 +10,9 @@ format:
   ukdri-revealjs:
     smaller: true
     multiplex: true
+    footer: |
+        Made with the [UKDRI Quarto template](https://github.com/H-Mateus/quarto-ukdri-theme) by [GMBH](https://gmbernardoharrington.netlify.app/).
+        Code available on GitHub [here](https://github.com/H-Mateus/presentations_dri-ecr-vascular_reproducibility_2024-03-14).
 embed-resources: true
 bibliography: references.bib
 csl: /Users/mateusbernardo-harrington/Documents/citation_styles/nature.csl
@@ -42,29 +45,9 @@ code <- qrcode::qr_code("https://h-mateus.github.io/presentations_dri-ecr-vascul
 qrcode::generate_svg(code, filename = here::here("images/qrcode.svg"))
 ```
 
--   Slides are here: [https://h-mateus.github.io/presentations_dri-ecr-vascular_reproducibility_2024-03-14/2024-02-26_ecr-vascular-meeting_reproducibility.html#/title-slide](https://h-mateus.github.io/presentations_dri-ecr-vascular_reproducibility_2024-03-14/2024-02-26_ecr-vascular-meeting_reproducibility.html#/title-slide)
+-   Slides are here: [https://h-mateus.github.io/presentations_dri-ecr-vascular_reproducibility_2024-03-14/2024-02-26_ecr-vascular-meeting_reproducibility.html](https://h-mateus.github.io/presentations_dri-ecr-vascular_reproducibility_2024-03-14/2024-02-26_ecr-vascular-meeting_reproducibility.html)
 
 ![](images/qrcode.svg)
-
-## Most published research is false
-
-::: incremental
-::: columns
-::: {.column width="40%"}
--   Whenever people look at this, things don't look great...[@baker_1500_2016; @ioannidis_why_2005; @smaldino_natural_2016; @head_extent_2015]
--   Citations aren't a good metric of quality either[@yang_estimating_2020]
--   Small sample sizes are a big issue, especially in neuroscience[@button_power_2013]
-:::
-
-::: {.column width="60%"}
-[![](images/yang_2020_citation_rates.jpeg)](https://www.pnas.org/content/early/2020/04/28/1909046117)
-:::
-:::
-:::
-
-::: notes
--   Small sample size = low power = less change to detect non-null effects, but *also* more likely that any significant effect found is false
-:::
 
 ## Academic journals suck
 
@@ -119,17 +102,36 @@ qrcode::generate_svg(code, filename = here::here("images/qrcode.svg"))
 :::
 :::
 
+## Most published research is false
+
+::: incremental
+::: columns
+::: {.column width="40%"}
+-   Whenever people look at this, things don't look great...[@baker_1500_2016; @ioannidis_why_2005; @smaldino_natural_2016; @head_extent_2015]
+-   Citations aren't a good metric of quality either[@yang_estimating_2020]
+-   Small sample sizes are a big issue, especially in neuroscience[@button_power_2013]
+-   That time a major paper that supposedly discovered A$\beta$*56 a oligermer species, turned out to be full of image manipulations, whoops[@piller_potential_2022]
+:::
+
+::: {.column width="60%"}
+::: {.r-stack}
+[![](images/yang_2020_citation_rates.jpeg){.fragment}](https://www.pnas.org/content/early/2020/04/28/1909046117)
+
+![](images/fraud.gif){.fragment}
+:::
+:::
+:::
+:::
+
+::: notes
+-   Small sample size = low power = less change to detect non-null effects, but *also* more likely that any significant effect found is false
+:::
+
 ## An investigator cannot guarantee that the claims made in a study are correct
 
 -   Reproducibility is important not because it ensures that the results are correct, but rather because it ensures transparency and gives us confidence in understanding exactly what was done.
 
 ![](images/power_pose.gif){fig-align="center"}
-
-## An example of a wee goof in the field
-
--   That time a major paper that supposedly discovered A$\beta$*56 a oligermer species, turned out to be full of image manipulations, whoops[@piller_potential_2022]
-
-![](images/fraud.gif){fig-align="center"}
 
 ## Solutions
 
@@ -193,6 +195,8 @@ qrcode::generate_svg(code, filename = here::here("images/qrcode.svg"))
 -   R or Python for data analysis and use literate programming methods like [Quarto](https://quarto.org/) and/or [Jupyter notebooks](https://jupyter.org/)[^2]
 -   If you want to do Bayesian but still want a GUI: [JASP](https://jasp-stats.org/)
 
+![](images/tools.gif){fig-align="center"}
+
 [^2]: Don't stress over R vs Python, it's doesn't matter. Quarto is my fav for writing/analysis
 
 ## Data sharing policy {background-image="images/data_sharing.png" background-size="contain"}
@@ -201,40 +205,19 @@ qrcode::generate_svg(code, filename = here::here("images/qrcode.svg"))
 
 ## Thanks for listening {.final-slide background-image="_extensions/H-Mateus/ukdri/title_background.png" style="color: #0ac8ff;"}
 
-Replace `profile.png` with the path to the pictures you'd like to use.
+-   Please don't let the perfect be the enemy of the good! Anything you can do to get closer to more transparent and reproducible research is a huge win as far as I'm concerned
+-   Here's a link to the slides again: [https://h-mateus.github.io/presentations_dri-ecr-vascular_reproducibility_2024-03-14/2024-02-26_ecr-vascular-meeting_reproducibility.html](https://h-mateus.github.io/presentations_dri-ecr-vascular_reproducibility_2024-03-14/2024-02-26_ecr-vascular-meeting_reproducibility.html)
 
-::: columns
-::: {.column width="20%"}
-![[Name Porsition/Role]{style="color:white;"}](profile.png){.profile-item .custom-box width="75%"}
-:::
-
-::: {.column width="20%"}
-![[Name Porsition/Role]{style="color:white;"}](profile.png){.profile-item .custom-box width="75%"}
-:::
-
-::: {.column width="20%"}
-![[Name Porsition/Role]{style="color:white;"}](profile.png){.profile-item .custom-box width="75%"}
-:::
-:::
-
-::: columns
-::: {.column width="50%"}
-[Collaborator institution]{style="color:white;"}<br> Name (Position/Role)<br> Name (Position/Role)<br> Name (Position/Role)<br>
-:::
-
-::: {.column width="50%"}
-[Collaborator institution]{style="color:white;"}<br> Name (Position/Role)<br> Name (Position/Role)<br> Name (Position/Role)<br>
-:::
-:::
+![](images/qrcode.svg)
 
 <!--Use the following to add further logos to the title/final slide-->
 
 <!--Adjust sizing in the CSS file-->
 
-::: title-logo-1
-:::
+<!-- ::: title-logo-1 -->
+<!-- ::: -->
 
-::: title-logo-2
-:::
+<!-- ::: title-logo-2 -->
+<!-- ::: -->
 
 ## References
