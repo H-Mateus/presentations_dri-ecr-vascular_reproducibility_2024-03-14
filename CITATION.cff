@@ -1,0 +1,30 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Reproducibility - A *very* brief overview
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - orcid: 'https://orcid.org/0000-0001-6075-3619'
+    affiliation: Cardiff University
+    email: bernardo-harringtong@cardiff.ac.uk
+    given-names: Gabriel Mateus
+    family-names: Bernardo Harrington
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.10809738
+repository-code: >-
+  https://github.com/H-Mateus/presentations_dri-ecr-vascular_reproducibility_2024-03-14
+url: >-
+  https://h-mateus.github.io/presentations_dri-ecr-vascular_reproducibility_2024-03-14/2024-02-26_ecr-vascular-meeting_reproducibility.html
+abstract: >-
+  A Slide deck and associated dependencies for a talk on
+  reproducibility at the UKDRI ECR Vascular meeting
+keywords:
+  - Slide deck
+  - Quarto
+  - Reproducibilty
+license: CC-BY-SA-4.0
