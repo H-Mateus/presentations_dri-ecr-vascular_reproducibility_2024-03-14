@@ -1,0 +1,228 @@
+---
+title: "Reproducibility"
+subtitle: 'A *very* brief overview'
+author: '<a href="https://gmbernardoharrington.netlify.app/" style="color: #fa2d6e">Gabriel Mateus Bernardo Harrington</a>'
+date: '2024-03-14'
+date-modified: '`r Sys.Date()`'
+date-format: iso
+institute: 'Research Associate | Webber Group'
+format: 
+  ukdri-revealjs:
+    smaller: true
+    multiplex: true
+embed-resources: true
+bibliography: references.bib
+csl: /Users/mateusbernardo-harrington/Documents/citation_styles/nature.csl
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(librarian)
+pkg <- c("tidyverse", "gt", "leaflet", "DT")
+shelf(pkg)
+rm(pkg)
+```
+
+```{r}
+#| label: dri-hexcolours
+#| include: false
+dri_hexcolours <- c("dark_blue" = "#00326e", "light_grey" = "#c4d1d9",
+                    "dark_grey" = "#415767", "sky_blue" = "#0ac8ff",
+                    "petrol_blue" = "007faf", "brigth_blue" = "4682ff",
+                    "cobalt" = "325ad7", "violet" = "#461e8c", "fuchsia" = "#fa2d6e",
+                    "ruby" = "#aa0050", "yellow" = "#ffed00")
+```
+
+## Most published research is false
+
+::: incremental
+::: columns
+::: {.column width="40%"}
+-   Whenever people look at this, things don't look great...[@baker_1500_2016; @ioannidis_why_2005; @smaldino_natural_2016; @head_extent_2015]
+-   Citations aren't a good metric of quality either[@yang_estimating_2020]
+-   Small sample sizes are a big issue, especially in neuroscience[@button_power_2013]
+:::
+
+::: {.column width="60%"}
+[![](images/yang_2020_citation_rates.jpeg)](https://www.pnas.org/content/early/2020/04/28/1909046117)
+:::
+:::
+:::
+
+::: notes
+-   Small sample size = low power = less change to detect non-null effects, but *also* more likely that any significant effect found is false
+:::
+
+## Academic journals suck
+
+. . .
+
+::: {layout-ncol="2"}
+-   Journal status and paper quality are poorly correlated[@szucs_empirical_2017; @brembs_prestigious_2018]
+-   Space is dominated by 5 big publication houses - [they are evil](https://www.youtube.com/watch?v=TzLgGSNq0Wk)[@racimo_ethical_2022]
+-   Strong bias against negative results
+-   Do they spend their staggering profits checking for obvious signs of fraud, encourage replication or even just make science more readable and accessible? Of course not.[@buranyi_is_2017]
+-   Nice documentary on the business of scholarship [here](https://vimeo.com/273358286)[@noauthor_paywall_2018]
+
+[![](images/stop_elseiver.png)](https://stopelsevier.wordpress.com/)
+:::
+
+::: notes
+-   High IF journals are super competitive \> they get swamped with too-good-to-be-true data by desperate scientists
+-   Obscene profit margins \< 35% VS 2/11/21% for Amazon/Google/Apple
+:::
+
+## GUIs suck
+
+::: {layout-ncol="2"}
+-   Graphical user interface (GUI) tools like Excel, SPSS & Graphpad are very opaque and error prone, as our government learnt during COVID[@hern_covid_2020]
+-   The Excel mistake heard around the world and the lasting economic repercussions[@ryssdal_excel_2013]
+-   Propriety software - many people can't access it and therefore can't replicate analysis
+-   No obvious history of changes made or operations performed
+
+![](images/excel_goof.gif)
+:::
+
+## Stats suck
+
+-   Frequentist statistics is used almost exclusively for all science
+    -   It is extremely unintuitive and prone to abuse and is rarely done correctly in practise (p-hacking)[@head_extent_2015]
+    -   Great video on why p-values are hella variable[@geoff_cumming_intro_2013]
+-   Bayesian statistics is a fundamentally different approach, no ground truth assumptions so no pvalues and no p-hacking
+
+::: notes
+-   Link to GUI issue - just click buttons on all test to get sig p-value
+:::
+
+### Experimental designs suck
+
+::: columns
+::: {.column width="40%"}
+-   Positive control? pretty pls?
+:::
+
+::: {.column width="60%"}
+![](images/positivity.gif){fig-align="center" width="40%"}
+:::
+:::
+
+## An investigator cannot guarantee that the claims made in a study are correct
+
+-   Reproducibility is important not because it ensures that the results are correct, but rather because it ensures transparency and gives us confidence in understanding exactly what was done.
+
+![](images/power_pose.gif){fig-align="center"}
+
+## An example of a wee goof in the field
+
+-   That time a major paper that supposedly discovered A$\beta$*56 a oligermer species, turned out to be full of image manipulations, whoops[@piller_potential_2022]
+
+![](images/fraud.gif){fig-align="center"}
+
+## Solutions
+
+![](images/we_can_do_better.gif)
+
+## Registered reports
+
+-   Largely solves two of the biggest issues - post-hoc hypothesising/data massaging and inability to publish negative results
+-   Make it [diamond open access](https://www.coalition-s.org/diamond-open-access/) and you can stick it to the evil publishers too!
+    -   Check out PCI: [https://rr.peercommunityin.org/](https://www.coalition-s.org/diamond-open-access/)
+
+::: columns
+::: {.column width="50%"}
+-   "But the big IF journals don't do registered reports"
+-   Yeah, they're evil remember? Of course they won't do anything to make science not suck
+    -   Also, Nature does do them now (they're still evil though)
+:::
+
+::: {.column width="50%"}
+![](images/Screenshot%202024-03-07%20at%2017.21.07.png){width="50%"}
+:::
+:::
+
+## An idealised workflow
+
+::: columns
+::: {.column width="50%"}
+1.  Come up with neat project idea
+2.  pre-register study (can be embargoed) and write up registered report
+3.  publish registered report \> get valuable feedback from wise and courteous reviewers (let me dream pls)
+4.  Apply for funding, pointing to your already peer-reviewed project as evidence of it's strength \> get all the moneys
+5.  Do project as you said you would \> get results (everything worked first time)
+:::
+
+::: {.column width="50%"}
+![](images/imagination.gif)
+
+6.  Publish all the things!
+:::
+:::
+
+## Let there be code
+
+::: columns
+::: {.column width="60%"}
+-   Code is just a set of instructions to tell a computer to do something
+-   It's an explicit bridge between your raw experimental data (which should be *sacrosanct*!) and your reported stats/figures
+-   Great video guide here[@mine_cetinkaya-rundel_improve_2020]
+-   Version control: wouldn't it be nice to have a detailed record of all the changes made to all the files in a project when and by whom? Use [Git](https://git-scm.com/) and the [DRI GitHub](https://github.com/UKDRI)!
+-   Use whatever, as long as it's open-source
+-   Containerisation: encapsulate your computational environment[@nust_ten_2020]
+:::
+
+::: {.column width="40%"}
+![](images/learn_code.gif)
+:::
+:::
+
+## Particualr tool suggestions
+
+-   R or Python for data analysis and use literate programming methods like [Quarto](https://quarto.org/) and/or [Jupyter notebooks](https://jupyter.org/)[^2]
+-   If you want to do Bayesian but still want a GUI: [JASP](https://jasp-stats.org/)
+
+[^2]: Don't stress over R vs Python, it's doesn't matter. Quarto is my fav for writing/analysis
+
+## Data sharing policy {background-image="images/data_sharing.png" background-size="contain"}
+
+<!-- define the final slide  -->
+
+## Thanks for listening {.final-slide background-image="_extensions/H-Mateus/ukdri/title_background.png" style="color: #0ac8ff;"}
+
+Replace `profile.png` with the path to the pictures you'd like to use.
+
+::: columns
+::: {.column width="20%"}
+![[Name Porsition/Role]{style="color:white;"}](profile.png){.profile-item .custom-box width="75%"}
+:::
+
+::: {.column width="20%"}
+![[Name Porsition/Role]{style="color:white;"}](profile.png){.profile-item .custom-box width="75%"}
+:::
+
+::: {.column width="20%"}
+![[Name Porsition/Role]{style="color:white;"}](profile.png){.profile-item .custom-box width="75%"}
+:::
+:::
+
+::: columns
+::: {.column width="50%"}
+[Collaborator institution]{style="color:white;"}<br> Name (Position/Role)<br> Name (Position/Role)<br> Name (Position/Role)<br>
+:::
+
+::: {.column width="50%"}
+[Collaborator institution]{style="color:white;"}<br> Name (Position/Role)<br> Name (Position/Role)<br> Name (Position/Role)<br>
+:::
+:::
+
+<!--Use the following to add further logos to the title/final slide-->
+
+<!--Adjust sizing in the CSS file-->
+
+::: title-logo-1
+:::
+
+::: title-logo-2
+:::
+
+## References
