@@ -2,7 +2,7 @@
 # Reproducibility talk - UKDRI Vascular ECR meeting 2024
 
 [![DOI](https://zenodo.org/badge/770919433.svg)](https://zenodo.org/doi/10.5281/zenodo.10809738)
-Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
 Repo of the resources for my talk on reproducibility at the UKDRI ECR Vascular meeting 2024.
 
