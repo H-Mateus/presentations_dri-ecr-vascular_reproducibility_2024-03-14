@@ -13,6 +13,7 @@ format:
     footer: |
         Made with the [UKDRI Quarto template](https://github.com/H-Mateus/quarto-ukdri-theme) by [GMBH](https://gmbernardoharrington.netlify.app/).
         Code available on GitHub [here](https://github.com/H-Mateus/presentations_dri-ecr-vascular_reproducibility_2024-03-14).
+        Licensed under [CC-BY-SA](http://creativecommons.org/licenses/by-sa/4.0/)
 embed-resources: true
 bibliography: references.bib
 csl: /Users/mateusbernardo-harrington/Documents/citation_styles/nature.csl
@@ -45,7 +46,7 @@ code <- qrcode::qr_code("https://h-mateus.github.io/presentations_dri-ecr-vascul
 qrcode::generate_svg(code, filename = here::here("images/qrcode.svg"))
 ```
 
--   Slides are here: [https://h-mateus.github.io/presentations_dri-ecr-vascular_reproducibility_2024-03-14/2024-02-26_ecr-vascular-meeting_reproducibility.html](https://h-mateus.github.io/presentations_dri-ecr-vascular_reproducibility_2024-03-14/2024-02-26_ecr-vascular-meeting_reproducibility.html)
+-   Slides are here: <https://h-mateus.github.io/presentations_dri-ecr-vascular_reproducibility_2024-03-14/2024-02-26_ecr-vascular-meeting_reproducibility.html>
 
 ![](images/qrcode.svg)
 
@@ -110,11 +111,11 @@ qrcode::generate_svg(code, filename = here::here("images/qrcode.svg"))
 -   Whenever people look at this, things don't look great...[@baker_1500_2016; @ioannidis_why_2005; @smaldino_natural_2016; @head_extent_2015]
 -   Citations aren't a good metric of quality either[@yang_estimating_2020]
 -   Small sample sizes are a big issue, especially in neuroscience[@button_power_2013]
--   That time a major paper that supposedly discovered A$\beta$*56 a oligermer species, turned out to be full of image manipulations, whoops[@piller_potential_2022]
+-   That time a major paper that supposedly discovered A$\beta$\*56 a oligermer species, turned out to be full of image manipulations, whoops[@piller_potential_2022]
 :::
 
 ::: {.column width="60%"}
-::: {.r-stack}
+::: r-stack
 [![](images/yang_2020_citation_rates.jpeg){.fragment}](https://www.pnas.org/content/early/2020/04/28/1909046117)
 
 ![](images/fraud.gif){.fragment}
@@ -141,7 +142,7 @@ qrcode::generate_svg(code, filename = here::here("images/qrcode.svg"))
 
 -   Largely solves two of the biggest issues - post-hoc hypothesising/data massaging and inability to publish negative results
 -   Make it [diamond open access](https://www.coalition-s.org/diamond-open-access/) and you can stick it to the evil publishers too!
-    -   Check out PCI: [https://rr.peercommunityin.org/](https://www.coalition-s.org/diamond-open-access/)
+    -   Check out PCI: [https://rr.peercommunityin.org/](https://rr.peercommunityin.org/)
 
 ::: columns
 ::: {.column width="50%"}
@@ -155,28 +156,47 @@ qrcode::generate_svg(code, filename = here::here("images/qrcode.svg"))
 :::
 :::
 
-## An idealised workflow
+## An idealised workflow - part 1
 
 ::: columns
-::: {.column width="50%"}
-1.  Come up with neat project idea
+::: {.column width="60%"}
+1.  Come up with neat project idea - create repository on DRI GitHub (can be private)
+    -   Use this to organise the project (add collaborators, make Gantt charts, etc.)
 2.  pre-register study (can be embargoed) and write up registered report
+    -   Can do this on [OSF](https://osf.io/)
 3.  publish registered report \> get valuable feedback from wise and courteous reviewers (let me dream pls)
-4.  Apply for funding, pointing to your already peer-reviewed project as evidence of it's strength \> get all the moneys
-5.  Do project as you said you would \> get results (everything worked first time)
+    -   In a diamond open access journal ideally!
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ![](images/imagination.gif)
+:::
+:::
 
+::: aside
+-   Use a [template](https://gin-tonic.netlify.app/standard/) for the GitHub project - be consistent!
+:::
+
+## An idealised workflow - part 2
+
+::: columns
+::: {.column width="65%"}
+4.  Apply for funding if you don't already have it
+    -   Some funders are finally pulling their heads out and formally incorporating this into applications
+5.  Do study as you said you would (and do any additional work/exploratory stuff as it comes up!)
 6.  Publish all the things!
+    -   Paper, data, code, container of computational environment (Can use [Zendo](https://zenodo.org/) to generate DOIs for non-paper bits!)
+:::
+
+::: {.column width="35%"}
+![](images/imagination.gif)
 :::
 :::
 
 ## Let there be code
 
 ::: columns
-::: {.column width="60%"}
+::: {.column width="65%"}
 -   Code is just a set of instructions to tell a computer to do something
 -   It's an explicit bridge between your raw experimental data (which should be *sacrosanct*!) and your reported stats/figures
 -   Great video guide here[@mine_cetinkaya-rundel_improve_2020]
@@ -185,19 +205,30 @@ qrcode::generate_svg(code, filename = here::here("images/qrcode.svg"))
 -   Containerisation: encapsulate your computational environment[@nust_ten_2020]
 :::
 
-::: {.column width="40%"}
+::: {.column width="35%"}
 ![](images/learn_code.gif)
 :::
 :::
 
-## Particualr tool suggestions
+## Particualr tool suggestions/learning resources
 
--   R or Python for data analysis and use literate programming methods like [Quarto](https://quarto.org/) and/or [Jupyter notebooks](https://jupyter.org/)[^2]
+::: columns
+::: {.column width="60%"}
+-   R or Python for data analysis and use literate programming methods like [Quarto](https://quarto.org/) and/or [Jupyter notebooks](https://jupyter.org/)
 -   If you want to do Bayesian but still want a GUI: [JASP](https://jasp-stats.org/)
+-   Great guide on using Git with R: <https://happygitwithr.com/>[@hester_lets_nodate]
+-   A video guide to Bayes in R [here](https://www.youtube.com/watch?v=EBGKzDAAWYo)[@r-_ladies_amsterdam_r-ladies_2021]
+:::
 
+::: {.column width="40%"}
 ![](images/tools.gif){fig-align="center"}
+:::
+:::
 
-[^2]: Don't stress over R vs Python, it's doesn't matter. Quarto is my fav for writing/analysis
+::: aside
+Don't stress over R vs Python, it doesn't matter. 
+Quarto is my fav for writing/analysis.
+:::
 
 ## Data sharing policy {background-image="images/data_sharing.png" background-size="contain"}
 
@@ -206,29 +237,29 @@ qrcode::generate_svg(code, filename = here::here("images/qrcode.svg"))
 ## Thanks for listening {.final-slide background-image="_extensions/H-Mateus/ukdri/title_background.png" style="color: #0ac8ff;"}
 
 ::: columns
-::: {.column width="60%"}
--   Please don't let the perfect be the enemy of the good! 
+::: {.column width="70%"}
+-   Please don't let the perfect be the enemy of the good!
 -   Anything you can do to get closer to more transparent and reproducible research is a huge win as far as I'm concerned
--   Here's a link to the slides again: [https://h-mateus.github.io/presentations_dri-ecr-vascular_reproducibility_2024-03-14/2024-02-26_ecr-vascular-meeting_reproducibility.html](https://h-mateus.github.io/presentations_dri-ecr-vascular_reproducibility_2024-03-14/2024-02-26_ecr-vascular-meeting_reproducibility.html)
+-   Here's a link to the slides again: <https://h-mateus.github.io/presentations_dri-ecr-vascular_reproducibility_2024-03-14/2024-02-26_ecr-vascular-meeting_reproducibility.html>
 :::
 
-::: {.column width="40%"}
+::: {.column width="30%"}
 ![](images/qrcode.svg)
 
 [![](https://zenodo.org/badge/770919433.svg)](https://zenodo.org/doi/10.5281/zenodo.10809738)
-
 :::
 :::
-
 
 <!--Use the following to add further logos to the title/final slide-->
 
 <!--Adjust sizing in the CSS file-->
 
 <!-- ::: title-logo-1 -->
+
 <!-- ::: -->
 
 <!-- ::: title-logo-2 -->
+
 <!-- ::: -->
 
 ## References
